@@ -8,5 +8,5 @@
 ## Commands
 Usage | Description
 ------------ | -------------
-start | This will start pinging mentioned role.
-stop | This command will stop pinging.
+<prefix> start | This will start pinging mentioned role.
+<prefix> stop | This command will stop pinging.
