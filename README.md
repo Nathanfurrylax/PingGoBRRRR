@@ -7,7 +7,7 @@
 
 ## To run the bot:
 ### Go to config.json and enter the given fields which are:
-```javasript
+```json
 {
     "token": "",
     "guild_id": "",
