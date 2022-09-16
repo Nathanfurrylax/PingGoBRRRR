@@ -26,9 +26,11 @@ client.on('messageCreate',msg => {
             console.log("State: " + pingOn);
         
     }else if(msg.content === `${config.prefix} stop`){
+        if(pingOn === false){
+            msg.reply("Bot is not pinging")
+        }else if(pingOn === true){
             msg.reply("Stopped pinging")
-            process.exit(0)
-        
+        }
     }
 
     if(pingOn === true){
