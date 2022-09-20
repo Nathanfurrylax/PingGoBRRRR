@@ -19,10 +19,7 @@
 ```
 
 ## Commands
-Usage | Description
------------- | -------------
-<prefix> start | This will start pinging mentioned role.
-<prefix> stop | This command will stop pinging.
+#### There are none.. I have given up on life so it will spam untill you turn the bot off 👍
 
 ## Changing the time:
 ### To change the time that the bot sends the messages, go to `index.js`
