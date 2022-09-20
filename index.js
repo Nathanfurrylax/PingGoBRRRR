@@ -1,4 +1,5 @@
 const {Client,GatewayIntentBits} = require('discord.js')
+const { message } = require('prompt')
 const config = require('./config.json')
 const client = new Client({
     intents: [
@@ -9,33 +10,18 @@ const client = new Client({
     ]
 })
 
+var i = 0;
+var pingOn = true //this is absolutely useless but im brainded
 client.on('messageCreate',msg => {
-    var pingOn = false
     const roleToBePinged = `<@&${config.role_id}>`
-    const channel = client.channels.cache.find(channel => channel.id === config.guild_id)
-    var i = 0;
-    if(msg.content === `<@${config.bot_id}>`){
-        msg.reply("My prefix is `" + config.prefix + "`")
-    }
-    if(msg.content == `${config.prefix} help`){
-        msg.reply(`Do **${config.prefix} start** to start pinging \n Do **${config.prefix} stop** to stop pinging`)
-    }
-    if(msg.content === `${config.prefix} start`){
-            msg.reply("Started pinging")
-            pingOn = true
-            console.log("State: " + pingOn);
-        
-    }else if(msg.content === `${config.prefix} stop`){
-        if(pingOn === false){
-            msg.reply("Bot is not pinging")
-        }else if(pingOn === true){
-            msg.reply("Stopped pinging")
-        }
-    }
+    const channel = client.channels.cache.find(channel => channel.id === config.channel_id)
 
+    if(msg.content === `${config.prefix}channel`){
+        msg.reply(`Pings at <#${config.channel_id}>`)
+    }
     if(pingOn === true){
         setInterval(() => {
-            channel.send(`${roleToBePinged} \n ---------------------------------------------------------------------- \n Ping no: **${++i}** \n ----------------------------------------------------------------------`)
+            channel.send(`|| ${roleToBePinged} || Ping no: **${++i}** \n ----------------------------------------------------------------------`)
         }, 1000);
     }
 })
