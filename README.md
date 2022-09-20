@@ -29,4 +29,4 @@
             channel.send(`${roleToBePinged} \n ---------------------------------------------------------------------- \n Ping no: **${++i}** \n ----------------------------------------------------------------------`)
         }, 1000)
 ```
-### Change the 1000 to your wish. The number entered will be in milliseconds so calculate the time accordingly
+### Change the time to your wish. The number entered will be in milliseconds so calculate the time accordingly
